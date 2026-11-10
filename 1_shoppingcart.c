@@ -4,9 +4,10 @@
 
 int main() {
 
-  char item[30];
-  float price;
-  int numItems;
+  char item[30] = "";
+  float price = 0.0f;
+  int numItems = 0;
+  char currency = '$';
 
   printf("What item would you like to buy? ");
   fgets(item, sizeof(item),stdin);
@@ -19,7 +20,7 @@ int main() {
   scanf("%d", &numItems);
 
   printf("You have baught %d %ss\n", numItems, item);
-  printf("YOur total is: %.2f\n", price*numItems);
+  printf("Your total is: %c%.2f\n", currency, price*numItems);
 
   return 0;
 }
