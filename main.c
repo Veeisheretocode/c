@@ -1,6 +1,8 @@
 #include<stdio.h>
 #include<stdbool.h> //to use boolean data type
 #include<string.h>
+#include<math.h>
+
 
 int main(){
     //tis some text
@@ -103,34 +105,48 @@ int main(){
 
 //--------------------------------------------------------------------------------
 
-int num =0;
-float gpa = 0.0f;
-char grade= '\0';
-char name[30]= "Vee Kee";
+// int num =0;
+// float gpa = 0.0f;
+// char grade= '\0';
+// char name[30]= "Vee Kee";
 
-printf("Enter a number:");
-scanf("%d", &num);
+// printf("Enter a number:");
+// scanf("%d", &num);
 
-printf("Enter your gpa:");
-scanf("%f", &gpa);
+// printf("Enter your gpa:");
+// scanf("%f", &gpa);
 
-printf("Enter your grade:");
-scanf(" %c", &grade);
+// printf("Enter your grade:");
+// scanf(" %c", &grade);
 
-// printf("Enter your name:");
-// scanf("%s", &name); //scanf cant read white space so it will only read what you typed before the white space
+// // printf("Enter your name:");
+// // scanf("%s", &name); //scanf cant read white space so it will only read what you typed before the white space
 
-//instead we can use fgets if we wanna store something with whitespaces
-getchar(); //clears the new line character within the input buffer
-printf("Enter your full name:");
-fgets(name, sizeof(name), stdin); //fgets( var, sizeofvar, standard input)
-name[strlen(name)-1] = '\0'; //adds null terminator at the end of whatever you put in the fgets to clear the newine effect
-//name = "sham vee\0"
+// //instead we can use fgets if we wanna store something with whitespaces
+// getchar(); //clears the new line character within the input buffer
+// printf("Enter your full name:");
+// fgets(name, sizeof(name), stdin); //fgets( var, sizeofvar, standard input)
+// name[strlen(name)-1] = '\0'; //adds null terminator at the end of whatever you put in the fgets to clear the newine effect
+// //name = "sham vee\0"
 
-printf("Your Name is: %s\n", name);
-printf("Your number is: %d\n", num);
-printf("Your GPA is: %f\n", gpa);
-printf("Your Grade is: %c\n", grade);
+// printf("Your Name is: %s\n", name);
+// printf("Your number is: %d\n", num);
+// printf("Your GPA is: %f\n", gpa);
+// printf("Your Grade is: %c\n", grade);
+
+//--------------------------------------------------------------------------------
+
+//math function
+
+int x = 9;
+int y = sqrt(x);
+y = pow(x, 3);
+printf("\n%d\n", y);
+
+
+
+
+
 
 //--------------------------------------------------------------------------------
 
@@ -143,7 +159,68 @@ printf("Your Grade is: %c\n", grade);
 
 
 
-    //--------------------------------------------------------------------------------
+
+
+
+//--------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+//--------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+//--------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+//--------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+//--------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+//--------------------------------------------------------------------------------
 
 
     return 0;
