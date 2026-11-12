@@ -17,7 +17,7 @@ int main()
     printf("Enter the time (in years):");
     scanf("%lf", &time);
 
-    double CI = principal* pow(1 + (rate/100), time);
+    double CI = (principal* pow(1 + (rate/100), time)) - principal;
     double amount = principal + CI;
 
     printf("The toal compund interest is: %.2lf\n", CI);
