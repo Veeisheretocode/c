@@ -17,7 +17,7 @@ int main (){
     scanf("%d", &choice);
 
     if (choice == 1){
-        printf("Enter the weight in Kilograms:");
+        printf("\nEnter the weight in Kilograms:");
         scanf("%lf", &weight);
         converted_weight = weight*2.2046 ;
         printf("Weight in pounds is: %.2lf\n", converted_weight);
