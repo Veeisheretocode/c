@@ -138,15 +138,10 @@ int main(){
 
 //math function
 
-int x = 9;
-int y = sqrt(x);
-y = pow(x, 3);
-printf("\n%d\n", y);
-
-
-
-
-
+// int x = 9;
+// int y = sqrt(x);
+// y = pow(x, 3);
+// printf("\n%d\n", y);
 
 //--------------------------------------------------------------------------------
 
