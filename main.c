@@ -276,6 +276,31 @@ int main() {
   // outer loop- rows
   // inner loop - cloumns
   //--------------------------------------------------------------------------------
+  // RAND FUNCTUON - generates random numbers
+
+  // printf("%d\n", rand()); //will generate same number
+
+  srand(time(NULL));
+  // printf("%d", rand());
+  // RAND_MAX()generates maximum number as per your operating system.
+
+  // to get random numbers in a given range
+  //  int min = 50;
+  //  int max = 100;
+
+  // int randomNum = (rand() % (max - min +1)) + min;
+
+  // printf("%d\n", randomNum);
+
+  // to get multipke random numbers-
+  int min = 50;
+  int max = 100;
+
+  int randomNum1 = (rand() % (max - min + 1)) + min; // formula to create a pseudo random number
+  int randomNum2 = (rand() % (max - min + 1)) + min;
+  int randomNum3 = (rand() % (max - min + 1)) + min;
+
+  printf("%d %d %d\n", randomNum1, randomNum2, randomNum3);
 
   //--------------------------------------------------------------------------------
 
