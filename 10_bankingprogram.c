@@ -7,7 +7,7 @@ float withdraw(float balance);
 
 int main() {
   int userChoice = 0;
-  float balance = 10000;
+  float balance = 0.0f;
   printf("### WELCOME TO THE BANK ###\n");
 
   do {
@@ -40,7 +40,7 @@ return 0;
 }
 
 float withdraw(float balance) {
-  float amtWithdrawn = 0.0;
+  float amtWithdrawn = 0.0f;
   do {
     printf("Enter the amount to withdraw: $");
     scanf("%f", &amtWithdrawn);
@@ -59,7 +59,7 @@ float withdraw(float balance) {
 void checkBalance(float balance) { printf("Your balance is $%.2f\n", balance); }
 
 float deposit() {
-  float depositamt = 0.0;
+  float depositamt = 0.0f;
 
   printf("Enter the amount to deposit: $");
   scanf("%f", &depositamt);
