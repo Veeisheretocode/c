@@ -1,7 +1,10 @@
 #include <math.h>
 #include <stdbool.h> //to use boolean data type
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
+#include <time.h>
+#include <unistd.h> //to get a sleep function
 
 int main() {
   // tis some text
@@ -207,28 +210,102 @@ int main() {
   //--------------------------------------------------------------------------------
   // nested ifs
 
-  float price = 10;
-  bool isStudent = false;
-  bool isSenior = false;
+  // float price = 10;
+  // bool isStudent = false;
+  // bool isSenior = false;
 
-  if (isStudent) {
-    if (isSenior) {
-      printf("You get student discount of 10 percent\n");
-      printf("You get a senior dicount of 20 percent\n");
-      printf("Price of ticket : %.2f\n",
-             price - (price * (0.1) + price * (0.2)));
+  // if (isStudent) {
+  //   if (isSenior) {
+  //     printf("You get student discount of 10 percent\n");
+  //     printf("You get a senior dicount of 20 percent\n");
+  //     printf("Price of ticket : %.2f\n",
+  //            price - (price * (0.1) + price * (0.2)));
 
-    } else {
-      printf("You get student discount of 10 perceent.");
-      printf("Price of ticket : %.2f\n", price - (price * (0.1)));
-    }
-  } else if (isSenior) {
-    printf("You get senior discount of 20 percent");
-    printf("Price of ticket : %.2f\n", price - (price * (0.2)));
-  } else {
-    printf("You get no discount");
-    printf("Price of ticket : %.2f\n", price);
-  }
+  //   } else {
+  //     printf("You get student discount of 10 perceent.");
+  //     printf("Price of ticket : %.2f\n", price - (price * (0.1)));
+  //   }
+  // } else if (isSenior) {
+  //   printf("You get senior discount of 20 percent");
+  //   printf("Price of ticket : %.2f\n", price - (price * (0.2)));
+  // } else {
+  //   printf("You get no discount");
+  //   printf("Price of ticket : %.2f\n", price);
+  // }
+
+  //--------------------------------------------------------------------------------
+  // WHILE LOOP
+  // do some code, while the condition remains true
+  //  int num = 0;
+  //  while(num<=0){
+  //    printf("Enter a number: ");
+  //    scanf("%d", &num);
+  //  }
+
+  // do{
+  //   printf("Enter a number: ");
+  //   scanf("%d", &num);
+  // }while(num<=0); //variation of while loop it executes atleast once
+
+  // bool isRunning = true;
+  // char response = '\0';
+
+  // while (isRunning) {
+  //   printf("You are playing a game!");
+  //   printf("Would you like to continue? : Y(yes), N(No): ");
+  //   scanf(" %c", &response);
+
+  //   if(response != 'Y' && response!='y'){
+  //     isRunning = false;
+  //   }
+  // }
+  // printf("You exit the game!\n");
+
+  //--------------------------------------------------------------------------------
+  // FOR LOOP - to repeat a code limited numbers of times
+  //  for (int i=10; i>=0; i--) {
+  //    sleep(1);
+  //    printf("%d\n", i);
+  //  }
+  //  printf("HAPPY NEW YEAR!\n");
+  //--------------------------------------------------------------------------------
+  // break break out of the loop
+  // continue = skip current loop
+  //--------------------------------------------------------------------------------
+  // nested FOR LOOPS
+  // outer loop- rows
+  // inner loop - cloumns
+  //--------------------------------------------------------------------------------
+
+  //--------------------------------------------------------------------------------
+
+  //--------------------------------------------------------------------------------
+
+  //--------------------------------------------------------------------------------
+
+  //--------------------------------------------------------------------------------
+
+  //--------------------------------------------------------------------------------
+
+  //--------------------------------------------------------------------------------
+
+  //--------------------------------------------------------------------------------
+
+  //--------------------------------------------------------------------------------
+
+  //--------------------------------------------------------------------------------
+
+  //--------------------------------------------------------------------------------
+
+  //--------------------------------------------------------------------------------
+
+  //--------------------------------------------------------------------------------
+
+  //--------------------------------------------------------------------------------
+
+  //--------------------------------------------------------------------------------
+
+  //--------------------------------------------------------------------------------
 
   //--------------------------------------------------------------------------------
 
