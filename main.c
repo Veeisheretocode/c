@@ -1,9 +1,10 @@
-#include <math.h>
+#include <inttypes.h>
+// #include <math.h>
 #include <stdbool.h> //to use boolean data type
 #include <stdio.h>
-#include <stdlib.h>
+// #include <stdlib.h>
 #include <string.h>
-#include <time.h>
+// #include <time.h>
 #include <unistd.h> //to get a sleep function
 
 int main() {
@@ -280,7 +281,7 @@ int main() {
 
   // printf("%d\n", rand()); //will generate same number
 
-  srand(time(NULL));
+  // srand(time(NULL));
   // printf("%d", rand());
   // RAND_MAX()generates maximum number as per your operating system.
 
@@ -293,20 +294,97 @@ int main() {
   // printf("%d\n", randomNum);
 
   // to get multipke random numbers-
-  int min = 50;
-  int max = 100;
+  // int min = 50;
+  // int max = 100;
 
-  int randomNum1 = (rand() % (max - min + 1)) + min; // formula to create a pseudo random number
-  int randomNum2 = (rand() % (max - min + 1)) + min;
-  int randomNum3 = (rand() % (max - min + 1)) + min;
+  // int randomNum1 = (rand() % (max - min + 1)) + min; // formula to create a
+  // pseudo random number int randomNum2 = (rand() % (max - min + 1)) + min; int
+  // randomNum3 = (rand() % (max - min + 1)) + min;
 
-  printf("%d %d %d\n", randomNum1, randomNum2, randomNum3);
-
-  //--------------------------------------------------------------------------------
+  // printf("%d %d %d\n", randomNum1, randomNum2, randomNum3);
 
   //--------------------------------------------------------------------------------
+  // ARRAYS
+
+  // int numbers[5] = {10, 20, 30, 40, 50};
+  // char grades[5] = {'A', 'B', 'C', 'D', 'E'};
+  // char name[] = "Vee Kee";
+
+  // numbers[0] = 100;
+  // in c we can go out of bounds it will just throw a garbage value, meanwhile
+  // in other language we get error.
+  //  printf("%d\n", numbers[0]);
+  //  printf("%c\n", grades[3]);
+  //  printf("%c\n",name[4]);
+
+  // printf("%d\n", sizeof(numbers));
+  // printf("%d\n",sizeof(numbers[0]));
+  // int size = sizeof(numbers) / sizeof(numbers[0]);
+  // printing entire array
+  // for (int i = 0; i < size; i++) {
+  //   printf("%d ", numbers[i]);
+  // }
+
+  // user input in arrays
+  // int nums[5] = {0};
+  // int size = sizeof(nums) / sizeof(nums[0]);
+
+  // for (int i = 0; i < size; i++) {
+  //   printf("Enter a number: ");
+  //   scanf("%d", &nums[i]);
+  // }
+  // for (int i = 0; i < size; i++) {
+  //   printf("%d ", nums[i]);
+  // }
+  // printf("\n");
+  //--------------------------------------------------------------------------------
+  // 2D ARRAYS
+  // ARRAYS WITH i,j(row, column) indices.
+  // ex- [1 , 4, 7] index of 1 is 00, 4- 01, 7- 02
+  // ex- [2 , 5, 8] index of 2 is 10, 5- 11, 8- 12
+  // ex- [3 , 6, 9] index of 3 is 20, 6-21, 9- 22
+
+  // int numbers[][3] = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+  // int size = sizeof(numbers) / sizeof(numbers[0]);
+  //  printf("%d\n", numbers[0][2]);
+  // //in multi-d arrays you cant just leave the value of columns empty, you
+  // have to assign it a size for (int i = 0; i < size; i++) {
+  //   for (int j=0; j<size; j++) {
+  //     printf("%d ", numbers[i][j]);
+  //   }
+  // }
+  // printf("\n");
 
   //--------------------------------------------------------------------------------
+  // ARRAY OF STRINGS IN C
+  // char fruits[][10] = {"Apple", "Banana", "Coconut"};
+
+  // char fruit[][10] = {{'A', 'p', 'p', 'l', 'e'},
+  //                     {'B', 'a', 'n', 'a', 'n', 'a'},
+  //                     {'C', 'o', 'c', 'o', 'n', 'u', 't'}};
+  // // concetually the above two arrays are the same in a way
+  // int size = sizeof(fruits) / sizeof(fruits[0]);
+  // fruits[0][0] = 'P';
+  // for (int i = 0; i < size; i++) {
+  //   printf("%s ", fruits[i]);
+  // }
+  // printf("\n");
+
+  /// exercise - 1d string array
+  char names[3][25] = {0};
+  int size = sizeof(names) / sizeof(names[0]);
+  for (int i = 0; i < size; i++) {
+
+    printf("Enter a name: ");
+    fgets(names[i], sizeof(names[i]), stdin);
+    names[i][strlen(names[i]) - 1] = '\0';
+  }
+  printf("\n");
+  for (int i = 0; i < size; i++) {
+    printf("%s, ", names[i]);
+  }
+  printf("\n");
+  // output- {"hey pal", "yo lo", "how dy"}
 
   //--------------------------------------------------------------------------------
 
