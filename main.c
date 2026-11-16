@@ -558,7 +558,8 @@ int main() {
   // int number = 0;
   // printf("Enter the number of grades: ");
   // scanf("%d", &number);
-  // char *grades = malloc(number * sizeof(char)); // how much space we reserving
+  // char *grades = malloc(number * sizeof(char)); // how much space we
+  // reserving
   // // we reserve memory from heap, borrowing or renting of sorts
   // if (grades == NULL) {
   //   printf("Memory allocation failed!\n");
@@ -574,7 +575,8 @@ int main() {
   //   printf(" %c ", grades[i]);
   // }
 
-  // free(grades); // we are gonna free up the space after we are done using it and
+  // free(grades); // we are gonna free up the space after we are done using it
+  // and
   //               // dont need it anymore
   // grades = NULL; // when we no longer use it
   // if we dont set it to null it becomes a dangling pointer
@@ -583,35 +585,76 @@ int main() {
   // anymore
 
   //--------------------------------------------------------------------------------
-//Calloc() = contiguous allocation
-// allocates memory dynamically and set all allocated bytes to 0.
-//malloc() is faster but calloc() leads to less bugs
-//calloc(#, size)
-int number = 0;
-printf("ENter the number of players: ");
-scanf("%d", &number);
+  // Calloc() = contiguous allocation
+  //  allocates memory dynamically and set all allocated bytes to 0.
+  // malloc() is faster but calloc() leads to less bugs
+  // calloc(#, size)
+  //  int number = 0;
+  //  printf("ENter the number of players: ");
+  //  scanf("%d", &number);
 
-int *scores = calloc(number, sizeof(int));
+  // int *scores = calloc(number, sizeof(int));
 
-if(scores==NULL){
-  printf("Memory allocation failed");
-  return 1;
-}
+  // if(scores==NULL){
+  //   printf("Memory allocation failed");
+  //   return 1;
+  // }
 
-for (int i =0; i<number; i++) {
- printf("Enter score #%d: ", i+1);
- scanf("%d", &scores[i]);
-}
-for (int i =0; i<number; i++) {
- printf("%d ", scores[i]);
-}
-//
-free(scores);
-scores = NULL;
-
+  // for (int i =0; i<number; i++) {
+  //  printf("Enter score #%d: ", i+1);
+  //  scanf("%d", &scores[i]);
+  // }
+  // for (int i =0; i<number; i++) {
+  //  printf("%d ", scores[i]);
+  // }
+  // //
+  // free(scores);
+  // scores = NULL;
 
   //--------------------------------------------------------------------------------
+  // realloc() = reallocation
+  // resize previously allocated memories
+  // realloc(ptr, bytes);
+  // behaves similarly to dynamic array
 
+  int number = 0;
+  printf("Enter the number of products: ");
+  scanf("%d", &number);
+
+  float *prices = malloc(number * sizeof(float));
+  if (prices == NULL) {
+    printf("Memory allocation failed!\n");
+    return 1;
+  }
+
+  for (int i = 0; i < number; i++) {
+    printf("Enter price #%d :", i + 1);
+    scanf("%f", &prices[i]);
+  }
+  int newNum = 0;
+  printf("Enter a new number of prices: ");
+  scanf("%d", &newNum);
+
+  float *temp = realloc(
+      prices, newNum * sizeof(float)); // realloc will also freee old memory
+  if (temp == NULL) {
+    printf("COuld not reallocate memory\n");
+    // no need return 1
+  } else {
+    prices = temp;
+    // temp = NULL; //not always necessary
+
+    for (int i = number; i < newNum; i++) {
+      printf("Enter price #%d :", i + 1);
+      scanf("%f", &prices[i]);
+    }
+    for (int i = 0; i < newNum; i++) {
+      printf("$%.2f ", prices[i]);
+    }
+  }
+
+  free(prices);
+  prices = NULL;
   //--------------------------------------------------------------------------------
 
   //--------------------------------------------------------------------------------
