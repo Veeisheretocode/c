@@ -25,13 +25,19 @@
 //   bool isFUllTIme;
 // };
 
-typedef struct {
+// typedef struct {
 
-  char name[50];
-  int age;
-  float gpa;
-  bool isFUllTIme;
-} Student;
+//   char name[50];
+//   int age;
+//   float gpa;
+//   bool isFUllTIme;
+// } Student;
+
+typedef struct {
+  char model[25];
+  int year;
+  int price;
+} Car;
 
 int main() {
   // tis some text
@@ -451,29 +457,42 @@ int main() {
   // STRUCT- Custom container that hold multiple pieces of related information
   // similar to objects in other programming language
   // struct Student student1 = {"Spongebob", 30, 4.5, true};
-  Student student1 = {"Spongebob", 30, 4.5, true};
-//   printf("%s\n", student1.name);
-//   printf("%d\n", student1.age);
-//   printf("%.2f\n", student1.gpa);
-//  printf("%s\n", (student1.isFUllTIme) ? "Yes":"No");
+  // Student student1 = {"Spongebob", 30, 4.5, true};
+  //   printf("%s\n", student1.name);
+  //   printf("%d\n", student1.age);
+  //   printf("%.2f\n", student1.gpa);
+  //  printf("%s\n", (student1.isFUllTIme) ? "Yes":"No");
 
- Student student2 = {"Patrick", 32, 4.9, false};
-//    printf("\n%s\n", student2.name);
-//   printf("%d\n", student2.age);
-//   printf("%.2f\n", student2.gpa);
-//  printf("%s\n", (student2.isFUllTIme) ? "Yes":"No");
+  // Student student2 = {"Patrick", 32, 4.9, false};
+  //    printf("\n%s\n", student2.name);
+  //   printf("%d\n", student2.age);
+  //   printf("%.2f\n", student2.gpa);
+  //  printf("%s\n", (student2.isFUllTIme) ? "Yes":"No");
 
-Student student3 = {0};
-strcpy(student3.name, "Squidward");
-student3.age = 28;
-student3.gpa = 5.0;
-student3.isFUllTIme = true;
-   printf("\n%s\n", student3.name);
-  printf("%d\n", student3.age);
-  printf("%.2f\n", student3.gpa);
- printf("%s\n", (student3.isFUllTIme) ? "Yes":"No");
+  // Student student3 = {0};
+  // strcpy(student3.name, "Squidward");
+  // student3.age = 28;
+  // student3.gpa = 5.0;
+  // student3.isFUllTIme = true;
+  //    printf("\n%s\n", student3.name);
+  //   printf("%d\n", student3.age);
+  //   printf("%.2f\n", student3.gpa);
+  //  printf("%s\n", (student3.isFUllTIme) ? "Yes":"No");
   //--------------------------------------------------------------------------------
 
+  // ARRAYS OF STRUCTS- ARRAY where each element contains a struct{}
+  // helps in orgniing and grouping together the related data
+
+  Car cars[] = {{"Mustang", 2025, 32000},
+                {"Corvette", 2026, 62000},
+                {"Challenger", 2024, 29000},
+                {"Nano", 2012, 12000}};
+
+  int number = sizeof(cars) / sizeof(cars[0]);
+
+  for (int i = 0; i < number; i++) {
+    printf("%s %d $%d\n", cars[i].model, cars[i].year, cars[i].price);
+  }
   //--------------------------------------------------------------------------------
 
   //--------------------------------------------------------------------------------
