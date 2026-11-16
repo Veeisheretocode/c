@@ -7,7 +7,7 @@
 // #include <time.h>
 #include <unistd.h> //to get a sleep function
 
-void birthday(int *age);
+// void birthday(int *age);
 // enum Day{
 //   Sunday=1, Monday=2, Tuesday=3, Wednesday=4, Thursday=5, Friday=6,
 //   Saturday=7
@@ -34,11 +34,11 @@ void birthday(int *age);
 //   bool isFUllTIme;
 // } Student;
 
-typedef struct {
-  char model[25];
-  int year;
-  int price;
-} Car;
+// typedef struct {
+//   char model[25];
+//   int year;
+//   int price;
+// } Car;
 
 int main() {
   // tis some text
@@ -509,20 +509,52 @@ int main() {
   // printf("%d\n", pAge); //pAge = memory address
   // printf("%d\n", *pAge); //*pAge = stores data
 
-  int age = 25;
-  int *pAge = &age;
+  // int age = 25;
+  // int *pAge = &age;
 
-  // birthday(age);
-  birthday(pAge); // to make changes in ACTUAL value we will pass pointer to our
-                  // variable
+  // // birthday(age);
+  // birthday(pAge); // to make changes in ACTUAL value we will pass pointer to
+  // our
+  //                 // variable
 
-  printf("You are %d years old\n", age);
+  // printf("You are %d years old\n", age);
   //--------------------------------------------------------------------------------
+  // WRITE INTO A FILE USING C
+
+  // FILE *pFile = fopen("output.txt", "w"); //w = write mode
+
+  // char text[] = "OH MY GOSH!\nDONT YOU KNOW IM A SAVAGE?\n";
+
+  // if(pFile == NULL){
+  //   printf("Eroor opening file\n");
+  //   return 1; //exit code for error
+  // }
+
+  // fprintf(pFile, "%s", text);
+  // printf("file was written successfully!\n");
+
+  // fclose(pFile); //dont forget to close the file at the end
 
   //--------------------------------------------------------------------------------
+  // READ A FILE IN C
+  // FILE *pFile = fopen("input.txt", "r"); // r = read file
+  // char buffer[1024] = {0};               // 1kb this buffer will temp store
+  // data
 
+  // if (pFile == NULL) {
+  //   printf("Could not open the file\n");
+  //   return 1;
+  // }
+
+  // while (fgets(buffer, sizeof(buffer), pFile) != NULL) {
+  //   printf("%s", buffer); // will print whatever is inside the buffer
+  // }
+  // fclose(pFile);
   //--------------------------------------------------------------------------------
+  // malloc()- a fucntion in c that dynamically allocates a specified number of
+  // bytes in memory
 
+  
   //--------------------------------------------------------------------------------
 
   //--------------------------------------------------------------------------------
@@ -551,4 +583,4 @@ int main() {
 // }
 
 // pass by refrence
-void birthday(int *age) { (*age)++; }
+// void birthday(int *age) { (*age)++; }
