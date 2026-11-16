@@ -3,6 +3,7 @@
 #include <stdbool.h> //to use boolean data type
 #include <stdio.h>
 // #include <stdlib.h>
+#include <stdlib.h> //required for malloc
 #include <string.h>
 // #include <time.h>
 #include <unistd.h> //to get a sleep function
@@ -554,8 +555,39 @@ int main() {
   // malloc()- a fucntion in c that dynamically allocates a specified number of
   // bytes in memory
 
-  
+  // int number = 0;
+  // printf("Enter the number of grades: ");
+  // scanf("%d", &number);
+  // char *grades = malloc(number * sizeof(char)); // how much space we reserving
+  // // we reserve memory from heap, borrowing or renting of sorts
+  // if (grades == NULL) {
+  //   printf("Memory allocation failed!\n");
+  //   return 1;
+  // }
+
+  // for (int i = 0; i < number; i++) {
+  //   printf("Enter grade #%d: ", i + 1);
+  //   scanf(" %c", &grades[i]);
+  // }
+
+  // for (int i = 0; i < number; i++) {
+  //   printf(" %c ", grades[i]);
+  // }
+
+  // free(grades); // we are gonna free up the space after we are done using it and
+  //               // dont need it anymore
+  // grades = NULL; // when we no longer use it
+  // if we dont set it to null it becomes a dangling pointer
+  //  we gotta avoid dangling pointer
+  // we dont want a pointer to take up space in memory wen we are not using it
+  // anymore
+
   //--------------------------------------------------------------------------------
+//Calloc() = contiguous allocation
+// allocates memory dynamically and set all allocated bytes to 0.
+//malloc() is faster but calloc() leads to less bugs
+//calloc(#, size)
+
 
   //--------------------------------------------------------------------------------
 
