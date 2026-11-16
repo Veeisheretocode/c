@@ -7,6 +7,32 @@
 // #include <time.h>
 #include <unistd.h> //to get a sleep function
 
+// enum Day{
+//   Sunday=1, Monday=2, Tuesday=3, Wednesday=4, Thursday=5, Friday=6,
+//   Saturday=7
+// };
+
+// typedef enum{
+//   Sunday=1, Monday=2, Tuesday=3, Wednesday=4, Thursday=5, Friday=6,
+//   Saturday=7
+// }Day;
+
+// struct Student {
+
+//   char name[50];
+//   int age;
+//   float gpa;
+//   bool isFUllTIme;
+// };
+
+typedef struct {
+
+  char name[50];
+  int age;
+  float gpa;
+  bool isFUllTIme;
+} Student;
+
 int main() {
   // tis some text
   /*
@@ -371,31 +397,81 @@ int main() {
   // printf("\n");
 
   /// exercise - 1d string array
-  char names[3][25] = {0};
-  int size = sizeof(names) / sizeof(names[0]);
-  for (int i = 0; i < size; i++) {
+  // char names[3][25] = {0};
+  // int size = sizeof(names) / sizeof(names[0]);
+  // for (int i = 0; i < size; i++) {
 
-    printf("Enter a name: ");
-    fgets(names[i], sizeof(names[i]), stdin);
-    names[i][strlen(names[i]) - 1] = '\0';
-  }
-  printf("\n");
-  for (int i = 0; i < size; i++) {
-    printf("%s, ", names[i]);
-  }
-  printf("\n");
+  //   printf("Enter a name: ");
+  //   fgets(names[i], sizeof(names[i]), stdin);
+  //   names[i][strlen(names[i]) - 1] = '\0';
+  // }
+  // printf("\n");
+  // for (int i = 0; i < size; i++) {
+  //   printf("%s, ", names[i]);
+  // }
+  // printf("\n");
   // output- {"hey pal", "yo lo", "how dy"}
 
   //--------------------------------------------------------------------------------
+  // TERNARY OPERATOR
 
+  //(condition) ? result-if-true : result-if-false;
+  // int a =1;
+
+  //(a>10) ? printf("a is greater than 10\n") : printf("a is Smaller
+  // than 10.\n");
+  //--------------------------------------------------------------------------------
+  // typedef = gives a new nickname to an already existing data type
+  // used to simplify complex data types and improves code readability
+  // typedef existing_name new_name;
+
+  // typedef int number ;
+  // typedef char letter ;
+
+  // number b = 1;
+  // printf("%d\n", b);
+
+  // letter grade = 'F';
+  // printf("%c\n", grade);
+
+  // letter arr[6] = {"Apple"};
+  // printf("%c\n", arr[4]);
   //--------------------------------------------------------------------------------
 
   //--------------------------------------------------------------------------------
+  // enums
+  // user defined data types that consist of a SET of named integer constant.
+  // benefits- replace numbers with readable names
+  // ex- SUNDAY = 0;
+  //  enum Day today = Monday;
+  //  Day today = Monday;
+  //  printf("%d\n", today);
 
   //--------------------------------------------------------------------------------
+  // STRUCT- Custom container that hold multiple pieces of related information
+  // similar to objects in other programming language
+  // struct Student student1 = {"Spongebob", 30, 4.5, true};
+  Student student1 = {"Spongebob", 30, 4.5, true};
+//   printf("%s\n", student1.name);
+//   printf("%d\n", student1.age);
+//   printf("%.2f\n", student1.gpa);
+//  printf("%s\n", (student1.isFUllTIme) ? "Yes":"No");
 
-  //--------------------------------------------------------------------------------
+ Student student2 = {"Patrick", 32, 4.9, false};
+//    printf("\n%s\n", student2.name);
+//   printf("%d\n", student2.age);
+//   printf("%.2f\n", student2.gpa);
+//  printf("%s\n", (student2.isFUllTIme) ? "Yes":"No");
 
+Student student3 = {0};
+strcpy(student3.name, "Squidward");
+student3.age = 28;
+student3.gpa = 5.0;
+student3.isFUllTIme = true;
+   printf("\n%s\n", student3.name);
+  printf("%d\n", student3.age);
+  printf("%.2f\n", student3.gpa);
+ printf("%s\n", (student3.isFUllTIme) ? "Yes":"No");
   //--------------------------------------------------------------------------------
 
   //--------------------------------------------------------------------------------
