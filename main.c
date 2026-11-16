@@ -7,6 +7,7 @@
 // #include <time.h>
 #include <unistd.h> //to get a sleep function
 
+void birthday(int *age);
 // enum Day{
 //   Sunday=1, Monday=2, Tuesday=3, Wednesday=4, Thursday=5, Friday=6,
 //   Saturday=7
@@ -483,18 +484,39 @@ int main() {
   // ARRAYS OF STRUCTS- ARRAY where each element contains a struct{}
   // helps in orgniing and grouping together the related data
 
-  Car cars[] = {{"Mustang", 2025, 32000},
-                {"Corvette", 2026, 62000},
-                {"Challenger", 2024, 29000},
-                {"Nano", 2012, 12000}};
+  // Car cars[] = {{"Mustang", 2025, 32000},
+  //               {"Corvette", 2026, 62000},
+  //               {"Challenger", 2024, 29000},
+  //               {"Nano", 2012, 12000}};
 
-  int number = sizeof(cars) / sizeof(cars[0]);
+  // int number = sizeof(cars) / sizeof(cars[0]);
 
-  for (int i = 0; i < number; i++) {
-    printf("%s %d $%d\n", cars[i].model, cars[i].year, cars[i].price);
-  }
+  // for (int i = 0; i < number; i++) {
+  //   printf("%s %d $%d\n", cars[i].model, cars[i].year, cars[i].price);
+  // }
   //--------------------------------------------------------------------------------
+  // pointers= a variable that stroes the meory address of another variable.
+  // benefits: they help avoid wasting memory by allowing you to pass the
+  // address of large ds instead of copying entire data.
+  // basically we are pointing at the address of the data so we can directly
+  // access it from there instead of copying and accessing the entire data
 
+  // int age = 25;
+  // printf("%d\n", &age); //&age = memory address where the data of age is
+  // stored printf("%d\n", age);  // age= data
+
+  // int *pAge = &age; // pointer pAge is now storing the memory address of age
+  // printf("%d\n", pAge); //pAge = memory address
+  // printf("%d\n", *pAge); //*pAge = stores data
+
+  int age = 25;
+  int *pAge = &age;
+
+  // birthday(age);
+  birthday(pAge); // to make changes in ACTUAL value we will pass pointer to our
+                  // variable
+
+  printf("You are %d years old\n", age);
   //--------------------------------------------------------------------------------
 
   //--------------------------------------------------------------------------------
@@ -517,3 +539,16 @@ int main() {
 
   return 0;
 }
+// pass by value
+//  void birthday(int age){
+//    age++;
+//    //this wont work cause here we are passing by value
+//    //meaning what we are passing to this function is copy of the value not
+//    actual value
+//    //so the changes that we'll make will happen to the copy not the original
+//    value
+
+// }
+
+// pass by refrence
+void birthday(int *age) { (*age)++; }
